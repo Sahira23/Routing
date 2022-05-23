@@ -2,12 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter,Switch } from 'react-router-dom';
+import ContactInfo from './ContactInfo';
+import Projects from './Projects';
+import About from './About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <BrowserRouter>
     <App />
+    <Switch>
+          <Route path="/about">
+            <About/>
+          </Route>
+          <Route path="/projects">
+            <Projects />
+          </Route>
+          <Route path="/contactinfo">
+            <ContactInfo />
+          </Route>
+        </Switch>
+  </BrowserRouter>
   </React.StrictMode>
 );
 
